@@ -23,7 +23,7 @@
 
 ### 🔸 1. **Web Application Manual Testing Project**
 - Test plan, test cases, bug report (Excel/CSV)
-- Sample website tested: *E-commerce / Banking demo site*
+- Sample website tested: AI-Website-Manual-Testing-Peppermint
 
 👉 [GitHub Repo Link](https://tilda.cc/page/?pageid=98238306)
 
