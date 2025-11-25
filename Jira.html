@@ -1,0 +1,1145 @@
+<html
+        xmlns="http://www.w3.org/TR/REC-html40">
+<head>
+<title>Jira</title>
+<style type="text/css">
+table {
+    mso-displayed-decimal-separator:"\.";
+    mso-displayed-thousand-separator:"\,";
+}
+body
+{
+    margin: 0px;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    color:black;
+}
+
+</style>
+<META HTTP-EQUIV="Content-Type" Content="application/vnd.ms-excel; charset=UTF-8">
+<!-- JRA-7598 - ensure fields (e.g. description) occupy only one cell - even fields containing newlines. -->
+<!--
+Vertical align all cells to the top, in order to align all issue rows of issuetable to the top,
+since Excel does not use or save the css files it is hardcoded here.
+-->
+<style>
+@page
+{
+mso-page-orientation:landscape;
+margin:.25in .25in .5in .25in;
+mso-header-margin:.5in;
+mso-footer-margin:.25in;
+mso-footer-data:"&R&P of &N";
+mso-horizontal-page-align:center;
+mso-vertical-page-align:center;
+}
+
+td.issuekey,
+td.issuetype,
+td.status {
+    mso-style-parent: "";
+    mso-number-format: \@;
+    text-align: left;
+}
+br
+{
+    mso-data-placement:same-cell;
+}
+
+td
+{
+    vertical-align: top;
+}
+</style>
+
+<!--[if gte mso 9]><xml>
+<x:ExcelWorkbook>
+<x:ExcelWorksheets>
+<x:ExcelWorksheet>
+<x:Name>general_report</x:Name>
+<x:WorksheetOptions>
+<x:Print>
+<x:ValidPrinterInfo/>
+</x:Print>
+</x:WorksheetOptions>
+</x:ExcelWorksheet>
+</x:ExcelWorksheets>
+</x:ExcelWorkbook>
+</xml><![endif]-->
+</head>
+<body>
+
+<table border="1">
+    <tr bgcolor="#205081" height="30">
+        <td colspan="38">
+            <img src="https://sachin-kolakar.atlassian.net/images/icon-jira-family-logo.png" width="57" height="30" border="0" alt="Jira">
+        </td>
+    </tr>
+    <tr>
+        <td colspan="38">
+            <a href="https://sachin-kolakar.atlassian.net/issues/?jql=project+%3D+%22PEP%22+ORDER+BY+created+DESC">Jira</a>
+        </td>
+    </tr>
+    <tr>
+                <td colspan="38">
+            Displaying <strong>14</strong> issues at <strong>25/Nov/25 3:54 PM</strong>.
+        </td>
+    </tr>
+</table>
+
+
+
+
+                                        <table id="issuetable" class="aui " border="1" cellpadding="3" cellspacing="1" width="100%">
+                        <thead>
+        <tr class="rowHeader">
+            
+                                                            <th class="colHeaderLink headerrow-statuscategorychangedate" data-id="statuscategorychangedate">
+                                                        Status Category Changed
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuetype" data-id="issuetype">
+                                                        Issue Type
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuekey" data-id="issuekey">
+                                                        Key
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timespent" data-id="timespent">
+                                                        Time Spent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeoriginalestimate" data-id="timeoriginalestimate">
+                                                        Original estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-project" data-id="project">
+                                                        Project
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-description" data-id="description">
+                                                        Description
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-statusCategory" data-id="statusCategory">
+                                                        Status Category
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimespent" data-id="aggregatetimespent">
+                                                        Σ Time Spent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-parent" data-id="parent">
+                                                        Parent
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolution" data-id="resolution">
+                                                        Resolution
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10015" data-id="customfield_10015">
+                                                        Start date
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-security" data-id="security">
+                                                        Security Level
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeestimate" data-id="aggregatetimeestimate">
+                                                        Σ Remaining Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-resolutiondate" data-id="resolutiondate">
+                                                        Resolved
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-workratio" data-id="workratio">
+                                                        Work Ratio
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-summary" data-id="summary">
+                                                        Summary
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-watches" data-id="watches">
+                                                        Watchers
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-lastViewed" data-id="lastViewed">
+                                                        Last Viewed
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-thumbnail" data-id="thumbnail">
+                                                        Images
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-creator" data-id="creator">
+                                                        Creator
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-subtasks" data-id="subtasks">
+                                                        Sub-tasks
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-created" data-id="created">
+                                                        Created
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-reporter" data-id="reporter">
+                                                        Reporter
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregateprogress" data-id="aggregateprogress">
+                                                        Σ Progress
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-priority" data-id="priority">
+                                                        Priority
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-labels" data-id="labels">
+                                                        Labels
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-environment" data-id="environment">
+                                                        Environment
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-customfield_10019" data-id="customfield_10019">
+                                                        Rank
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-timeestimate" data-id="timeestimate">
+                                                        Remaining Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-aggregatetimeoriginalestimate" data-id="aggregatetimeoriginalestimate">
+                                                        Σ Original Estimate
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-duedate" data-id="duedate">
+                                                        Due date
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-progress" data-id="progress">
+                                                        Progress
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-votes" data-id="votes">
+                                                        Votes
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-issuelinks" data-id="issuelinks">
+                                                        Linked Issues
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-assignee" data-id="assignee">
+                                                        Assignee
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-updated" data-id="updated">
+                                                        Updated
+                                                    </th>
+                                                
+                                                            <th class="colHeaderLink headerrow-status" data-id="status">
+                                                        Status
+                                                    </th>
+                                                                    </tr>
+    </thead>
+    <tbody>
+                    
+
+                <tr id="issuerow10044" rel="10044" data-issuekey="PEP-14" class="issuerow">
+                                            <td class="statuscategorychangedate"> 25/Nov/25 3:44 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-14" href="https://sachin-kolakar.atlassian.net/browse/PEP-14">PEP-14</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Footer contains placeholder demo content.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">In Progress</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Placeholder footer content
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> 25/Nov/25 3:44 PM </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Low
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001j:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:44 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">In Progress</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10050" rel="10050" data-issuekey="PEP-13" class="issuerow">
+                                            <td class="statuscategorychangedate"> &nbsp; </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-13" href="https://sachin-kolakar.atlassian.net/browse/PEP-13">PEP-13</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Text overlaps at &lt;360px width.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Hero text overlaps on narrow screens
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0003z:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:37 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10052" rel="10052" data-issuekey="PEP-12" class="issuerow">
+                                            <td class="statuscategorychangedate"> &nbsp; </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-12" href="https://sachin-kolakar.atlassian.net/browse/PEP-12">PEP-12</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            HTTP may not redirect to HTTPS.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Page does not enforce HTTPS
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0004f:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:37 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10049" rel="10049" data-issuekey="PEP-11" class="issuerow">
+                                            <td class="statuscategorychangedate"> 25/Nov/25 3:44 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-11" href="https://sachin-kolakar.atlassian.net/browse/PEP-11">PEP-11</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Image credits unclear/placeholder.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">In Progress</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Image credit links inconsistent
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Low
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001r:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:44 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">In Progress</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10043" rel="10043" data-issuekey="PEP-10" class="issuerow">
+                                            <td class="statuscategorychangedate"> &nbsp; </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-10" href="https://sachin-kolakar.atlassian.net/browse/PEP-10">PEP-10</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Site lacks favicon.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Favicon missing
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Low
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0002v:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:37 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10042" rel="10042" data-issuekey="PEP-9" class="issuerow">
+                                            <td class="statuscategorychangedate"> 25/Nov/25 3:45 PM </td>
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-9" href="https://sachin-kolakar.atlassian.net/browse/PEP-9">PEP-9</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Meta description missing or minimal.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Done</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> 25/Nov/25 3:45 PM </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Missing meta description
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Low
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0002n:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:45 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">Done</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10051" rel="10051" data-issuekey="PEP-8" class="issuerow">
+                                            <td class="statuscategorychangedate"> &nbsp; </td>
+                                            <td class="issuetype">    Task
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-8" href="https://sachin-kolakar.atlassian.net/browse/PEP-8">PEP-8</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Text crowds on 320px width.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Team section crowding on small screens
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Low
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00047:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:37 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10041" rel="10041" data-issuekey="PEP-7" class="issuerow">
+                                            <td class="statuscategorychangedate"> 25/Nov/25 3:44 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-7" href="https://sachin-kolakar.atlassian.net/browse/PEP-7">PEP-7</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Focus outline missing for keyboard navigation.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">In Progress</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Keyboard focus states missing
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0002r:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:44 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">In Progress</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10048" rel="10048" data-issuekey="PEP-6" class="issuerow">
+                                            <td class="statuscategorychangedate"> &nbsp; </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-6" href="https://sachin-kolakar.atlassian.net/browse/PEP-6">PEP-6</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Images missing alt attributes.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Images missing alt text
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0003r:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:37 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10040" rel="10040" data-issuekey="PEP-5" class="issuerow">
+                                            <td class="statuscategorychangedate"> &nbsp; </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-5" href="https://sachin-kolakar.atlassian.net/browse/PEP-5">PEP-5</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Email is plain text, not mailto link.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Email not clickable
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00027:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:37 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10047" rel="10047" data-issuekey="PEP-4" class="issuerow">
+                                            <td class="statuscategorychangedate"> &nbsp; </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-4" href="https://sachin-kolakar.atlassian.net/browse/PEP-4">PEP-4</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Phone numbers missing tel: links.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Phone numbers not clickable
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0003j:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:37 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10046" rel="10046" data-issuekey="PEP-3" class="issuerow">
+                                            <td class="statuscategorychangedate"> 25/Nov/25 3:45 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-3" href="https://sachin-kolakar.atlassian.net/browse/PEP-3">PEP-3</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Typos such as &#39;quailfication&#39;, &#39;Excellein&#39;, &#39;f0cused&#39;.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-yellow
+            jira-issue-status-lozenge-max-width-medium">In Progress</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Multiple spelling and grammar errors in job description
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           Medium
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0002t:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:45 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-yellow jira-issue-status-lozenge-indeterminate aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;In Progress&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">In Progress</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10045" rel="10045" data-issuekey="PEP-2" class="issuerow">
+                                            <td class="statuscategorychangedate"> &nbsp; </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-2" href="https://sachin-kolakar.atlassian.net/browse/PEP-2">PEP-2</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            External link opens in same tab instead of new tab.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-blue-gray
+            jira-issue-status-lozenge-max-width-medium">To Do</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    <em>Unresolved</em>
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> &nbsp; </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                External link peppermint.de opens in same tab
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i00033:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:37 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-blue-gray jira-issue-status-lozenge-new aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;To Do&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">To Do</span>    </td>
+                    </tr>
+
+
+                <tr id="issuerow10039" rel="10039" data-issuekey="PEP-1" class="issuerow">
+                                            <td class="statuscategorychangedate"> 25/Nov/25 3:45 PM </td>
+                                            <td class="issuetype">    Bug
+</td>
+                                            <td class="issuekey">
+
+    <a class="issue-link" data-issue-key="PEP-1" href="https://sachin-kolakar.atlassian.net/browse/PEP-1">PEP-1</a>
+</td>
+                                            <td class="timespent">0</td>
+                                            <td class="timeoriginalestimate">0</td>
+                                            <td class="project">    PepparMint
+</td>
+                                            <td class="description">            Social media icons in the footer appear but have no links, causing broken UX.
+    </td>
+                                            <td class="statusCategory">
+    <span class="aui-lozenge aui-lozenge-subtle jira-issue-status-lozenge jira-issue-status-lozenge-green
+            jira-issue-status-lozenge-max-width-medium">Done</span>
+</td>
+                                            <td class="aggregatetimespent">0</td>
+                                            <td class="parent"></td>
+                                            <td class="resolution">    Done
+</td>
+                                            <td class="customfield_10015"></td>
+                                            <td class="security"></td>
+                                            <td class="aggregatetimeestimate">0</td>
+                                            <td class="resolutiondate"> 25/Nov/25 3:45 PM </td>
+                                            <td class="workratio">&nbsp;
+</td>
+                                            <td class="summary"><p>
+                Footer social icons not linked
+    </p>
+</td>
+                                            <td class="watches">0</td>
+                                            <td class="lastViewed"> &nbsp; </td>
+                                            <td class="thumbnail"></td>
+                                            <td class="creator">            Sachin Kolakar
+    </td>
+                                            <td class="subtasks"></td>
+                                            <td class="created"> 25/Nov/25 3:37 PM </td>
+                                            <td class="reporter">            Sachin Kolakar
+    </td>
+                                            <td class="aggregateprogress"></td>
+                                            <td class="priority">           High
+    </td>
+                                            <td class="labels"></td>
+                                            <td class="environment"></td>
+                                            <td class="customfield_10019">      0|i0001z:
+  </td>
+                                            <td class="timeestimate">0</td>
+                                            <td class="aggregatetimeoriginalestimate">0</td>
+                                            <td class="duedate">    &nbsp;
+</td>
+                                            <td class="progress"></td>
+                                            <td class="votes">0</td>
+                                            <td class="issuelinks"></td>
+                                            <td class="assignee">    <em>Unassigned</em>
+</td>
+                                            <td class="updated"> 25/Nov/25 3:45 PM </td>
+                                            <td class="status">
+                <span class=" jira-issue-status-lozenge aui-lozenge jira-issue-status-lozenge-green jira-issue-status-lozenge-done aui-lozenge-subtle jira-issue-status-lozenge-max-width-medium" data-tooltip="&lt;span class=&quot;jira-issue-status-tooltip-title&quot;&gt;Done&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;jira-issue-status-tooltip-desc&quot;&gt;(Migrated on 25 Nov 2025 10:09 UTC)&lt;/span&gt;">Done</span>    </td>
+                    </tr>
+        </tbody>
+    </table>
+    <div class="end-of-stable-message"></div>
+            <table border="1" >
+<tr>
+    <td bgcolor="#dddddd" colspan="38"><font size="1">
+        Generated at Tue Nov 25 10:24:03 UTC 2025 by Sachin Kolakar using Jira 1001.0.0-SNAPSHOT#100290-rev:26df02bac11e213c3bedf009bee40fcc2d5ace17.
+    </font></td>
+</tr>
+</table>
+
+</body>
+</html>
